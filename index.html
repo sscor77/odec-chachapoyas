@@ -3,59 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Web Responsive</title>
+  <title>ODEC Chachapoyas</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
-    <nav class="navbar">
-      <div class="logo">MiLogo</div>
-      <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
-      <ul class="nav-links">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Servicios</a></li>
-        <li><a href="#">Acerca</a></li>
-        <li><a href="#">Contacto</a></li>
+    <img src="logo.png" alt="ODEC Logo">
+    <span class="menu-toggle">☰</span>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#formacion">Formación</a></li>
+        <li><a href="#servicio">Servicio</a></li>
+        <li><a href="#noticias">Noticias</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#eventos">Eventos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero">
-      <h1>Bienvenido a mi web</h1>
-      <p>Ejemplo de menú responsive con imágenes.</p>
-      <img src="img/nosotros/nosotro.jpg" alt="Imagen de nosotros">
-    </section>
+  <!-- HERO / SLIDER -->
+  <section id="inicio" class="hero">
+    <div class="slide active" style="background-image:url('img/slider/slide1.jpg')"></div>
+    <div class="slide" style="background-image:url('img/slider/slide2.jpg')"></div>
+    <div class="slide" style="background-image:url('img/slider/slide3.jpg')"></div>
+    <div class="hero-content">
+      <h1>Bienvenidos a ODEC Chachapoyas</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut orci nec felis volutpat laoreet.</p>
+    </div>
+  </section>
 
-    <!-- Galería -->
-    <section class="galeria">
-      <h2>Galería</h2>
-      <div class="galeria-contenedor">
-        <img src="img/galeria/galeria1.jpg" alt="Galería 1">
-        <img src="img/galeria/galeria2.jpg" alt="Galería 2">
-        <img src="img/galeria/galeria3.jpg" alt="Galería 3">
-      </div>
-    </section>
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="alt-bg">
+    <h2>Nosotros</h2>
+    <div class="nosotros-grid">
+      <img src="img/nosotros/nosotro.jpg" alt="Nosotros">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nunc in malesuada luctus, nunc orci lacinia ligula, sed fermentum massa dolor ut magna.</p>
+    </div>
+  </section>
 
-    <!-- Slider -->
-    <section class="slider">
-      <h2>Slider</h2>
-      <div class="slider-contenedor">
-        <img src="img/slider/slide1.jpg" alt="Slide 1">
-        <img src="img/slider/slide2.jpg" alt="Slide 2">
-        <img src="img/slider/slide3.jpg" alt="Slide 3">
-      </div>
-    </section>
-  </main>
+  <!-- RECURSOS -->
+  <section id="recursos">
+    <h2>Recursos Educativos</h2>
+    <div class="grid">
+      <div class="card">Lorem ipsum dolor sit amet (Inicial).</div>
+      <div class="card">Lorem ipsum dolor sit amet (Primaria).</div>
+      <div class="card">Lorem ipsum dolor sit amet (Secundaria).</div>
+    </div>
+  </section>
 
+  <!-- FORMACIÓN -->
+  <section id="formacion" class="alt-bg">
+    <h2>Formación</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis, libero a malesuada gravida, sapien ligula cursus nisl, in sollicitudin metus lacus ac justo.</p>
+  </section>
+
+  <!-- SERVICIO -->
+  <section id="servicio">
+    <h2>Servicio a la Comunidad</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac nisi eu mauris commodo sodales. Aliquam erat volutpat.</p>
+  </section>
+
+  <!-- NOTICIAS -->
+  <section id="noticias" class="alt-bg">
+    <h2>Noticias</h2>
+    <div class="grid">
+      <div class="card"><h3>Noticia 1</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+      <div class="card"><h3>Noticia 2</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+      <div class="card"><h3>Noticia 3</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria">
+    <h2>Galería</h2>
+    <div class="grid">
+      <div class="card"><img src="img/galeria/galeria1.jpg" alt="Galería 1"></div>
+      <div class="card"><img src="img/galeria/galeria2.jpg" alt="Galería 2"></div>
+      <div class="card"><img src="img/galeria/galeria3.jpg" alt="Galería 3"></div>
+    </div>
+  </section>
+
+  <!-- EVENTOS -->
+  <section id="eventos" class="alt-bg">
+    <h2>Eventos</h2>
+    <ul id="event-list"></ul>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form id="contact-form">
+      <input type="text" id="name" placeholder="Tu nombre">
+      <input type="email" id="email" placeholder="Tu correo">
+      <textarea id="message" rows="5" placeholder="Tu mensaje"></textarea>
+      <button type="submit" class="btn">Enviar</button>
+      <p class="error" id="form-error"></p>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 ODEC Chachapoyas - Oficina Diocesana de Educación Católica</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
   <script>
-    // Script para abrir/cerrar menú en móvil
-    const toggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    // Menú móvil
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('nav ul').classList.toggle('active');
+    });
 
-    toggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+    // Slider automático
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 4000);
+
+    // Eventos dinámicos
+    const eventos = [
+      { fecha: '2025-10-01', titulo: 'Inicio Taller Biblia' },
+      { fecha: '2025-10-15', titulo: 'Encuentro Pastoral' },
+      { fecha: '2025-11-05', titulo: 'Convivencia Estudiantil' }
+    ];
+    const ul = document.getElementById('event-list');
+    eventos.forEach(ev => {
+      const li = document.createElement('li');
+      li.textContent = `${ev.fecha} - ${ev.titulo}`;
+      ul.appendChild(li);
+    });
+
+    // Validación formulario
+    document.getElementById('contact-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      const error = document.getElementById('form-error');
+
+      if (!name || !email || !msg) {
+        error.textContent = "Todos los campos son obligatorios.";
+        return;
+      }
+      if (!/\S+@\S+\.\S+/.test(email)) {
+        error.textContent = "El correo no es válido.";
+        return;
+      }
+      error.textContent = "✅ Mensaje enviado correctamente (simulación).";
+      e.target.reset();
     });
   </script>
 </body>
