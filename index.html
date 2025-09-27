@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ODEC Chachapoyas</title>
+  <style>
+    /* -------- ESTILOS GENERALES -------- */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fafafa;
+      color: #333;
+    }
+    header {
+      background: #4a3c2a;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header img { height: 50px; }
+    nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+    nav a:hover { color: #ffd859; }
+    
+    /* ---------- MENU RESPONSIVE ---------- */
+    .menu-toggle { display: none; cursor: pointer; font-size: 24px; }
+    @media(max-width: 768px) {
+      nav ul { 
+        flex-direction: column; 
+        background: #4a3c2a;
+        position: absolute;
+        top: 70px; right: 0; left: 0;
+        display: none;
+      }
+      nav ul.active { display: flex; }
+      .menu-toggle { display: block; }
+    }
+
+    section { padding: 60px 20px; max-width: 1200px; margin: auto; }
+    h2 { text-align: center; margin-bottom: 30px; color: #4a3c2a; }
+    footer { background: #4a3c2a; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+
+    /* -------- HERO SLIDER -------- */
+    .hero {
+      position: relative;
+      height: 80vh;
+      color: white;
+      text-align: center;
+      display: flex; justify-content: center; align-items: center;
+      overflow: hidden;
+    }
+    .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s; }
+    .slide.active { opacity: 1; }
+    .hero-content { position: relative; z-index: 2; background: rgba(0,0,0,0.4); padding: 20px; border-radius: 10px; }
+
+    /* -------- GALERÍA -------- */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 20px; }
+    .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); cursor: pointer; }
+    .lightbox {
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8); justify-content: center; align-items: center;
+    }
+    .lightbox img { max-width: 90%; max-height: 90%; }
+
+    /* -------- EVENTOS (Calendario simple) -------- */
+    #eventos ul { list-style: none; padding: 0; }
+    #eventos li { background: #eee; margin: 5px 0; padding: 10px; border-radius: 5px; }
+
+    /* -------- FORMULARIO -------- */
+    form { max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
+    input, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+    .btn { padding: 10px 20px; background: #4a3c2a; color: white; border: none; cursor: pointer; border-radius: 5px; }
+    .btn:hover { background: #7b5e40; }
+    .error { color: red; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <img src="logo.png" alt="ODEC Logo">
+    <span class="menu-toggle">☰</span>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#formacion">Formación</a></li>
+        <li><a href="#servicio">Servicio</a></li>
+        <li><a href="#noticias">Noticias</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#eventos">Eventos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO / SLIDER -->
+  <section id="inicio" class="hero">
+    <div class="slide active" style="background-image:url('slide1.jpg')"></div>
+    <div class="slide" style="background-image:url('slide2.jpg')"></div>
+    <div class="slide" style="background-image:url('slide3.jpg')"></div>
+    <div class="hero-content">
+      <h1>Bienvenidos a ODEC Chachapoyas</h1>
+      <p>Educando con fe, valores y compromiso comunitario.</p>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros">
+    <h2>Nosotros</h2>
+    <p>Aquí va historia, misión, visión, fotos de equipo...</p>
+  </section>
+
+  <!-- RECURSOS -->
+  <section id="recursos">
+    <h2>Recursos Educativos</h2>
+    <div class="grid">
+      <div class="card">Inicial</div>
+      <div class="card">Primaria</div>
+      <div class="card">Secundaria</div>
+    </div>
+  </section>
+
+  <!-- FORMACIÓN -->
+  <section id="formacion">
+    <h2>Formación</h2>
+    <p>Cursos, talleres y materiales de capacitación.</p>
+  </section>
+
+  <!-- SERVICIO -->
+  <section id="servicio">
+    <h2>Servicio a la Comunidad</h2>
+    <p>Proyectos sociales, voluntariado y actividades pastorales.</p>
+  </section>
+
+  <!-- NOTICIAS -->
+  <section id="noticias">
+    <h2>Noticias</h2>
+    <div class="grid">
+      <div class="card"><h3>Evento 1</h3><p>Descripción...</p></div>
+      <div class="card"><h3>Evento 2</h3><p>Descripción...</p></div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria">
+    <h2>Galería</h2>
+    <div class="grid">
+      <div class="card"><img src="foto1.jpg" alt="foto" width="100%"></div>
+      <div class="card"><img src="foto2.jpg" alt="foto" width="100%"></div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="ampliado">
+  </div>
+
+  <!-- EVENTOS -->
+  <section id="eventos">
+    <h2>Eventos</h2>
+    <ul id="event-list"></ul>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form id="contact-form">
+      <input type="text" id="name" placeholder="Tu nombre">
+      <input type="email" id="email" placeholder="Tu correo">
+      <textarea id="message" rows="5" placeholder="Tu mensaje"></textarea>
+      <button type="submit" class="btn">Enviar</button>
+      <p class="error" id="form-error"></p>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 ODEC Chachapoyas - Oficina Diocesana de Educación Católica</p>
+  </footer>
+
+  <!-- JAVASCRIPT INTERACTIVO -->
+  <script>
+    // Menú móvil
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('nav ul').classList.toggle('active');
+    });
+
+    // Slider automático
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 4000);
+
+    // Lightbox galería
+    const lightbox = document.getElementById('lightbox');
+    const lightImg = lightbox.querySelector('img');
+    document.querySelectorAll('#galeria img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+    lightbox.addEventListener('click', () => lightbox.style.display = 'none');
+
+    // Eventos dinámicos
+    const eventos = [
+      { fecha: '2025-10-01', titulo: 'Inicio Taller Biblia' },
+      { fecha: '2025-10-15', titulo: 'Encuentro Pastoral' },
+      { fecha: '2025-11-05', titulo: 'Convivencia Estudiantil' }
+    ];
+    const ul = document.getElementById('event-list');
+    eventos.forEach(ev => {
+      const li = document.createElement('li');
+      li.textContent = `${ev.fecha} - ${ev.titulo}`;
+      ul.appendChild(li);
+    });
+
+    // Validación de formulario
+    document.getElementById('contact-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      const error = document.getElementById('form-error');
+
+      if (!name || !email || !msg) {
+        error.textContent = "Todos los campos son obligatorios.";
+        return;
+      }
+      if (!/\S+@\S+\.\S+/.test(email)) {
+        error.textContent = "El correo no es válido.";
+        return;
+      }
+      error.textContent = "✅ Mensaje enviado correctamente (simulación).";
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
